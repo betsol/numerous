@@ -1,0 +1,34 @@
+{
+  "name": "numerous",
+  "version": "0.0.1",
+  "description": "Smallest possible pluralization implementation in JavaScript",
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "translation",
+    "locales",
+    "plural",
+    "pluralization"
+  ],
+  "author": "Slava Fomin II <s.fomin@betsol.ru>",
+  "repository": "betsol/spa-server",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "async": "^0.9.0",
+    "cldr": "^2.3.4",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.1",
+    "node-beautify": "0.0.2"
+  },
+  "files": [
+    "lib/",
+    "locales/",
+    "changelog.md",
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "make test"
+  }
+}
