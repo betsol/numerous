@@ -1,5 +1,7 @@
 # Numerous
 
+[![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
+
 Smallest possible pluralization implementation in JavaScript.
 
 Right now, it supports ~629 locales by means of [CLDR][lib-cldr].
