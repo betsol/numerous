@@ -11,7 +11,7 @@
     "pluralization"
   ],
   "author": "Slava Fomin II <s.fomin@betsol.ru>",
-  "repository": "betsol/spa-server",
+  "repository": "betsol/numerous",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
