@@ -2,10 +2,6 @@ var expect = require('expect.js');
 
 var numerous = require('../lib/numerous.js');
 
-// Adding locales.
-require('../locales/ru.js');
-require('../locales/en.js');
-
 
 describe('Numerous', function () {
 

@@ -11,9 +11,8 @@ See the [complete list][locales].
 ## Usage
 
 1. Require library
-2. Require needed locales
-3. Create an instance for specific locale (optional)
-4. Pluralize!
+2. ???
+3. Pluralize!
 
 
 ### Examples
@@ -23,9 +22,6 @@ See the [complete list][locales].
 ```javascript
 
 var numerous = require('../lib/numerous.js');
-
-// Adding locales.
-require('../locales/en.js');
 
 // Returns "apple".
 numerous.pluralize('en', 1, {
@@ -47,23 +43,21 @@ pluralize('en', 2, {
 
 var numerous = require('../lib/numerous.js');
 
-// Adding locales.
-require('../locales/ru.js');
-require('../locales/en.js');
-
-// Creating instance for specific locale.
-var pluralize = numerous.create('en').pluralize;
+// Creating instances for specific locales.
+var englishPluralizer = numerous.create('en');
+var russianPluralizer = numerous.create('ru');
 
 // Returns "apple".
-pluralize(1, {
+englishPluralizer.pluralize(1, {
   one: 'apple',
   other: 'apples'
 });
 
-// Returns "cats".
-pluralize(2, {
-  one: 'cat',
-  other: 'cats'
+// Returns "яблока".
+russianPluralizer.pluralize(2, {
+  one: 'яблоко',
+  few: 'яблока',
+  many: 'яблок'
 });
 
 ```

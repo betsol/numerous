@@ -1,6 +1,6 @@
 {
   "name": "numerous",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Smallest possible pluralization implementation in JavaScript",
   "keywords": [
     "i18n",
