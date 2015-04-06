@@ -1,6 +1,6 @@
 # Numerous
 
-[![npm version](https://badge.fury.io/js/numerous.svg)](https://www.npmjs.com/package/numerous)
+[![npm version](https://badge.fury.io/js/numerous.svg)][repo-npm]
 [![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
 
 Smallest possible pluralization implementation in JavaScript.
@@ -106,6 +106,14 @@ Have any ideas or propositions? Feel free to contact me by [E-Mail][email].
 Cheers!
 
 
+## Support
+
+If you like this library consider to add star on [GitHub repository][repo-gh]
+and on [NPM][repo-npm].
+
+Thank you!
+
+
 ## License
 
 The MIT License (MIT)
@@ -138,3 +146,5 @@ THE SOFTWARE.
   [new-issue]: https://github.com/betsol/numerous/issues/new
   [locales]: docs/locales.md
   [lib-cldr]: https://github.com/papandreou/node-cldr
+  [repo-gh]: https://github.com/betsol/numerous
+  [repo-npm]: https://www.npmjs.com/package/numerous
