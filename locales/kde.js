@@ -1,5 +1,12 @@
-var numerous = require('../lib/numerous.js');
-var pluralize = function pluralize_kde(n) {
-    return "other"
-};
-numerous.addLocale('kde', pluralize);
+(function () {
+    var root = this;
+    var numerous;
+    if ('function' === typeof require) {
+        numerous = require('../lib/numerous.js');
+    } else {
+        numerous = root.numerous;
+    }
+    numerous.addLocale('kde', function pluralize_kde(n) {
+        return "other"
+    });
+}).call(this);

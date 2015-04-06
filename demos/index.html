@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Numerous — Demo</title>
+</head>
+
+<body>
+
+    <h1>Numerous — Demo</h1>
+    <p>Tiny pluralization library in JavaScript that supports almost any language.</p>
+    <p>
+        <a href="https://github.com/betsol/numerous">See it on GitHub &rightarrow;</a>
+    </p>
+    <hr>
+
+    <form id="form">
+        <div class="form-group">
+            <label for="apples-count">Number of apples</label>
+            <input id="apples-count" class="form-control" type="number" value="1">
+        </div>
+        <div class="form-group">
+            <label for="oranges-count">Number of oranges</label>
+            <input id="oranges-count" class="form-control" type="number" value="7">
+        </div>
+        <button type="submit" class="btn btn-default">Pluralize!</button>
+    </form>
+
+    <hr>
+
+    <p class="text-bigger">
+        I have
+        <strong id="apples-result" class="text-success"></strong>
+        and
+        <strong id="oranges-result" class="text-success"></strong>!
+    </p>
+
+    <hr/>
+
+    <p><a href="script.js" target="_blank">See the code behind this page!</a></p>
+
+    <!-- Scripts -->
+    <script src="../vendor/numerous/numerous.js"></script>
+    <script src="../vendor/locales/en.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

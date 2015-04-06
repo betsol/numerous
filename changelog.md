@@ -3,6 +3,13 @@
 This file documents all the **significant** changes over the history of this library.
 
 
+## Version 0.1.0
+(April 06, 2015)
+
+- Library now can be used in browser environment with Bower support
+- Added demos page
+
+
 ## Version 0.0.4
 (April 06, 2015)
 

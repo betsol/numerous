@@ -1,5 +1,12 @@
-var numerous = require('../lib/numerous.js');
-var pluralize = function pluralize_sah(n) {
-    return "other"
-};
-numerous.addLocale('sah', pluralize);
+(function () {
+    var root = this;
+    var numerous;
+    if ('function' === typeof require) {
+        numerous = require('../lib/numerous.js');
+    } else {
+        numerous = root.numerous;
+    }
+    numerous.addLocale('sah', function pluralize_sah(n) {
+        return "other"
+    });
+}).call(this);

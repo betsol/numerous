@@ -1,5 +1,12 @@
-var numerous = require('../lib/numerous.js');
-var pluralize = function pluralize_ms_latn_my(n) {
-    return "other"
-};
-numerous.addLocale('ms_latn_my', pluralize);
+(function () {
+    var root = this;
+    var numerous;
+    if ('function' === typeof require) {
+        numerous = require('../lib/numerous.js');
+    } else {
+        numerous = root.numerous;
+    }
+    numerous.addLocale('ms_latn_my', function pluralize_ms_latn_my(n) {
+        return "other"
+    });
+}).call(this);

@@ -1,7 +1,7 @@
 {
   "name": "numerous",
-  "version": "0.0.4",
-  "description": "Smallest possible pluralization implementation in JavaScript",
+  "version": "0.1.0",
+  "description": "Tiny pluralization library in JavaScript that supports almost any language",
   "keywords": [
     "i18n",
     "internationalization",
@@ -18,8 +18,12 @@
     "async": "^0.9.0",
     "cldr": "~3",
     "expect.js": "^0.3.1",
+    "gulp": "^3.8.11",
+    "gulp-gh-pages": "^0.5.0",
     "mocha": "^2.2.1",
-    "node-beautify": "0.0.2"
+    "node-beautify": "0.0.2",
+    "run-sequence": "^1.0.2",
+    "spa-server": "^0.1.0"
   },
   "files": [
     "lib/",

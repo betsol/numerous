@@ -3,10 +3,13 @@
 [![npm version](https://badge.fury.io/js/numerous.svg)][repo-npm]
 [![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
 
-Smallest possible pluralization implementation in JavaScript.
+Tiny pluralization library in JavaScript that supports almost any language.
 
-Right now, it supports ~619 locales by means of [CLDR][lib-cldr] (built-in).
-See the [complete list][locales].
+
+## Features
+
+- supports ~619 locales by means of [CLDR][lib-cldr] (built-in). See the [complete list][locales].
+- could be run in node or browser environment
 
 
 ## Usage
@@ -16,13 +19,40 @@ See the [complete list][locales].
 3. Pluralize!
 
 
-### Examples
+### With Node
 
-#### Direct example
+1). Install module via npm: `npm install --save numerous`.
+
+2). Require it:
 
 ```javascript
-
 var numerous = require('../lib/numerous.js');
+```
+
+
+### In browser
+
+1). Install package via Bower: `bower install --save betsol/numerous`.
+
+2). Add library to your page: 
+
+```html
+<script src="/bower_components/numerous/lib/numerous.js"></script>
+```
+
+3). Add required locales to your page:
+
+```html
+<script src="/bower_components/numerous/locales/en.js"></script>
+<script src="/bower_components/numerous/locales/ru.js"></script>
+```
+
+
+## Examples
+
+### Direct example
+
+```javascript
 
 // Returns "apple".
 numerous.pluralize('en', 1, {
@@ -38,11 +68,9 @@ pluralize('en', 2, {
 
 ```
 
-#### Example with instantiation
+### Example with instantiation
 
 ```javascript
-
-var numerous = require('../lib/numerous.js');
 
 // Creating instances for specific locales.
 var englishPluralizer = numerous.create('en');
@@ -64,18 +92,6 @@ russianPluralizer.pluralize(2, {
 ```
 
 
-## Installation
-
-It's exactly like you've already guessed:
-
-`npm install --save numerous` or `npm install --save-dev numerous`.
-
-
-## Configuration
-
-No configuration is required.
-
-
 ## Changelog
 
 Please see the [complete changelog][changelog] for list of changes.
@@ -88,8 +104,15 @@ This library was made possible by [it's contributors][contributors].
 
 ## Developer guide
 
-- Run `make locales` to build fresh list of locales.
-- Run `make test` to test the library.
+Fork, clone, create a feature branch, add tests, commit, create a PR.
+
+Run:
+
+- `npm install && bower install` to initialize the project
+- `make locales` to build fresh list of locales
+- `make test` to test the library
+- `gulp start` to run local webserver for demos page
+- `gulp deploy-site` to deploy GitHub Pages
 
 
 ## Feedback

@@ -55,9 +55,16 @@ function writePluralFunctionToFileForLocale (locale, pluralFunction, callback) {
 
   // Building the source.
   var source =
-    "var numerous = require('../lib/numerous.js');" +
-    "var pluralize = " + pluralFunction.toString() + ";" +
-    "numerous.addLocale('" + locale + "', pluralize);"
+    "(function () {" +
+    "  var root = this;" +
+    "  var numerous;" +
+    "  if ('function' === typeof require) {" +
+    "    numerous = require('../lib/numerous.js');" +
+    "  } else {" +
+    "    numerous = root.numerous;" +
+    "  }" +
+    "  numerous.addLocale('" + locale + "', " + pluralFunction.toString() + ");" +
+    "}).call(this);"
   ;
 
   // Replacing function name for convenience.
