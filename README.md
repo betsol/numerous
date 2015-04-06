@@ -1,7 +1,9 @@
 # Numerous
 
 [![npm version](https://badge.fury.io/js/numerous.svg)][repo-npm]
+![Bower](https://img.shields.io/bower/v/numerous.svg)
 [![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
+
 
 Tiny pluralization library in JavaScript that supports almost any language.
 
