@@ -14,6 +14,11 @@ Tiny pluralization library in JavaScript that supports almost any language.
 - could be run in node or browser environment
 
 
+## Demo
+
+Please see [the demo][site].
+
+
 ## Usage
 
 1. Require library
@@ -173,3 +178,4 @@ THE SOFTWARE.
   [lib-cldr]: https://github.com/papandreou/node-cldr
   [repo-gh]: https://github.com/betsol/numerous
   [repo-npm]: https://www.npmjs.com/package/numerous
+  [site]: http://betsol.github.io/numerous/

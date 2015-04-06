@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var serverFactory = require('spa-server');
 var deploy  = require('gulp-gh-pages');
+var debug  = require('gulp-debug');
 
 
 gulp.task('default', function (callback) {
