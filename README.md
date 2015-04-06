@@ -1,5 +1,6 @@
 # Numerous
 
+[![npm version](https://badge.fury.io/js/numerous.svg)](https://www.npmjs.com/package/numerous)
 [![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
 
 Smallest possible pluralization implementation in JavaScript.
