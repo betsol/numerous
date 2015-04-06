@@ -1,6 +1,6 @@
 {
   "name": "numerous",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Smallest possible pluralization implementation in JavaScript",
   "keywords": [
     "i18n",
@@ -16,7 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "async": "^0.9.0",
-    "cldr": "^2.3.4",
+    "cldr": "~3",
     "expect.js": "^0.3.1",
     "mocha": "^2.2.1",
     "node-beautify": "0.0.2"

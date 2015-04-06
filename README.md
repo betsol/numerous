@@ -4,7 +4,7 @@
 
 Smallest possible pluralization implementation in JavaScript.
 
-Right now, it supports ~629 locales by means of [CLDR][lib-cldr].
+Right now, it supports ~619 locales by means of [CLDR][lib-cldr].
 See the [complete list][locales].
 
 

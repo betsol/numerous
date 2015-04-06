@@ -3,6 +3,12 @@
 This file documents all the **significant** changes over the history of this library.
 
 
+## Version 0.0.4
+(April 06, 2015)
+
+- Updated locales (latest CLDR 27.0.1 is now used)
+
+
 ## Version 0.0.3
 (April 05, 2015)
 
