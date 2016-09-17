@@ -36,6 +36,9 @@
     "README.md"
   ],
   "scripts": {
-    "test": "make test"
+    "start": "gulp start",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec",
+    "demo-deploy": "gulp demo:deploy",
+    "build-locales": "./bin/build-locales.js"
   }
 }

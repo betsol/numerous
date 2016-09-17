@@ -118,10 +118,10 @@ Fork, clone, create a feature branch, add tests, commit, create a PR.
 Run:
 
 - `npm install && bower install` to initialize the project
-- `make locales` to build fresh list of locales
-- `make test` to test the library
-- `gulp start` to run local webserver for demos page
-- `gulp demo:deploy` to deploy GitHub Pages
+- `npm run-script build-locales` to build fresh list of locales
+- `npm test` to test the library
+- `npm start` to run local webserver for demos page
+- `npm run-script demo-deploy` to deploy GitHub Pages
 
 
 ## Feedback
