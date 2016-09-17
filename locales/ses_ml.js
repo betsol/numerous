@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('ses_ml', function pluralize_ses_ml(n) {
+    numerous.addLocale('ses_ml', function pluralize_ses_ml(n /**/ ) {
         return "other"
     });
 }).call(this);

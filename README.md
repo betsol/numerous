@@ -10,7 +10,7 @@ Tiny pluralization library in JavaScript that supports almost any language.
 
 ## Features
 
-- supports ~619 locales by means of [CLDR][lib-cldr] (built-in). See the [complete list][locales].
+- supports ~639 locales by means of [CLDR][lib-cldr] (built-in). See the [complete list][locales].
 - could be run in node or browser environment
 
 

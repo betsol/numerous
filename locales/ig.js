@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('ig', function pluralize_ig(n) {
+    numerous.addLocale('ig', function pluralize_ig(n /**/ ) {
         return "other"
     });
 }).call(this);

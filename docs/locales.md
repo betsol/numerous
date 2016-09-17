@@ -1,6 +1,6 @@
 # List of locales supported by Numerous
 
-Right now **619** locales are supported.
+Right now **639** locales are supported.
 
 Locale |
 --- |
@@ -60,8 +60,7 @@ Locale |
 [bg](../locales/bg.js) |
 [bg_bg](../locales/bg_bg.js) |
 [bm](../locales/bm.js) |
-[bm_latn](../locales/bm_latn.js) |
-[bm_latn_ml](../locales/bm_latn_ml.js) |
+[bm_ml](../locales/bm_ml.js) |
 [bn](../locales/bn.js) |
 [bn_bd](../locales/bn_bd.js) |
 [bn_in](../locales/bn_in.js) |
@@ -83,10 +82,15 @@ Locale |
 [ca_es_valencia](../locales/ca_es_valencia.js) |
 [ca_fr](../locales/ca_fr.js) |
 [ca_it](../locales/ca_it.js) |
+[ce](../locales/ce.js) |
+[ce_ru](../locales/ce_ru.js) |
 [cgg](../locales/cgg.js) |
 [cgg_ug](../locales/cgg_ug.js) |
 [chr](../locales/chr.js) |
 [chr_us](../locales/chr_us.js) |
+[ckb](../locales/ckb.js) |
+[ckb_iq](../locales/ckb_iq.js) |
+[ckb_ir](../locales/ckb_ir.js) |
 [cs](../locales/cs.js) |
 [cs_cz](../locales/cs_cz.js) |
 [cy](../locales/cy.js) |
@@ -117,21 +121,28 @@ Locale |
 [en_ag](../locales/en_ag.js) |
 [en_ai](../locales/en_ai.js) |
 [en_as](../locales/en_as.js) |
+[en_at](../locales/en_at.js) |
 [en_au](../locales/en_au.js) |
 [en_bb](../locales/en_bb.js) |
 [en_be](../locales/en_be.js) |
+[en_bi](../locales/en_bi.js) |
 [en_bm](../locales/en_bm.js) |
 [en_bs](../locales/en_bs.js) |
 [en_bw](../locales/en_bw.js) |
 [en_bz](../locales/en_bz.js) |
 [en_ca](../locales/en_ca.js) |
 [en_cc](../locales/en_cc.js) |
+[en_ch](../locales/en_ch.js) |
 [en_ck](../locales/en_ck.js) |
 [en_cm](../locales/en_cm.js) |
 [en_cx](../locales/en_cx.js) |
+[en_cy](../locales/en_cy.js) |
+[en_de](../locales/en_de.js) |
 [en_dg](../locales/en_dg.js) |
+[en_dk](../locales/en_dk.js) |
 [en_dm](../locales/en_dm.js) |
 [en_er](../locales/en_er.js) |
+[en_fi](../locales/en_fi.js) |
 [en_fj](../locales/en_fj.js) |
 [en_fk](../locales/en_fk.js) |
 [en_fm](../locales/en_fm.js) |
@@ -145,6 +156,7 @@ Locale |
 [en_gy](../locales/en_gy.js) |
 [en_hk](../locales/en_hk.js) |
 [en_ie](../locales/en_ie.js) |
+[en_il](../locales/en_il.js) |
 [en_im](../locales/en_im.js) |
 [en_in](../locales/en_in.js) |
 [en_io](../locales/en_io.js) |
@@ -169,6 +181,7 @@ Locale |
 [en_na](../locales/en_na.js) |
 [en_nf](../locales/en_nf.js) |
 [en_ng](../locales/en_ng.js) |
+[en_nl](../locales/en_nl.js) |
 [en_nr](../locales/en_nr.js) |
 [en_nu](../locales/en_nu.js) |
 [en_nz](../locales/en_nz.js) |
@@ -182,8 +195,10 @@ Locale |
 [en_sb](../locales/en_sb.js) |
 [en_sc](../locales/en_sc.js) |
 [en_sd](../locales/en_sd.js) |
+[en_se](../locales/en_se.js) |
 [en_sg](../locales/en_sg.js) |
 [en_sh](../locales/en_sh.js) |
+[en_si](../locales/en_si.js) |
 [en_sl](../locales/en_sl.js) |
 [en_ss](../locales/en_ss.js) |
 [en_sx](../locales/en_sx.js) |
@@ -212,6 +227,7 @@ Locale |
 [es_419](../locales/es_419.js) |
 [es_ar](../locales/es_ar.js) |
 [es_bo](../locales/es_bo.js) |
+[es_br](../locales/es_br.js) |
 [es_cl](../locales/es_cl.js) |
 [es_co](../locales/es_co.js) |
 [es_cr](../locales/es_cr.js) |
@@ -252,6 +268,7 @@ Locale |
 [fil](../locales/fil.js) |
 [fil_ph](../locales/fil_ph.js) |
 [fo](../locales/fo.js) |
+[fo_dk](../locales/fo_dk.js) |
 [fo_fo](../locales/fo_fo.js) |
 [fr](../locales/fr.js) |
 [fr_be](../locales/fr_be.js) |
@@ -319,10 +336,9 @@ Locale |
 [gv](../locales/gv.js) |
 [gv_im](../locales/gv_im.js) |
 [ha](../locales/ha.js) |
-[ha_latn](../locales/ha_latn.js) |
-[ha_latn_gh](../locales/ha_latn_gh.js) |
-[ha_latn_ne](../locales/ha_latn_ne.js) |
-[ha_latn_ng](../locales/ha_latn_ng.js) |
+[ha_gh](../locales/ha_gh.js) |
+[ha_ne](../locales/ha_ne.js) |
+[ha_ng](../locales/ha_ng.js) |
 [haw](../locales/haw.js) |
 [haw_us](../locales/haw_us.js) |
 [he](../locales/he.js) |
@@ -365,8 +381,7 @@ Locale |
 [kea](../locales/kea.js) |
 [kea_cv](../locales/kea_cv.js) |
 [kk](../locales/kk.js) |
-[kk_cyrl](../locales/kk_cyrl.js) |
-[kk_cyrl_kz](../locales/kk_cyrl_kz.js) |
+[kk_kz](../locales/kk_kz.js) |
 [kkj](../locales/kkj.js) |
 [kkj_cm](../locales/kkj_cm.js) |
 [kl](../locales/kl.js) |
@@ -379,8 +394,7 @@ Locale |
 [ko_kp](../locales/ko_kp.js) |
 [ko_kr](../locales/ko_kr.js) |
 [ks](../locales/ks.js) |
-[ks_arab](../locales/ks_arab.js) |
-[ks_arab_in](../locales/ks_arab_in.js) |
+[ks_in](../locales/ks_in.js) |
 [ksb](../locales/ksb.js) |
 [ksb_tz](../locales/ksb_tz.js) |
 [ksh](../locales/ksh.js) |
@@ -388,8 +402,7 @@ Locale |
 [kw](../locales/kw.js) |
 [kw_gb](../locales/kw_gb.js) |
 [ky](../locales/ky.js) |
-[ky_cyrl](../locales/ky_cyrl.js) |
-[ky_cyrl_kg](../locales/ky_cyrl_kg.js) |
+[ky_kg](../locales/ky_kg.js) |
 [lag](../locales/lag.js) |
 [lag_tz](../locales/lag_tz.js) |
 [lb](../locales/lb.js) |
@@ -421,15 +434,13 @@ Locale |
 [ml](../locales/ml.js) |
 [ml_in](../locales/ml_in.js) |
 [mn](../locales/mn.js) |
-[mn_cyrl](../locales/mn_cyrl.js) |
-[mn_cyrl_mn](../locales/mn_cyrl_mn.js) |
+[mn_mn](../locales/mn_mn.js) |
 [mr](../locales/mr.js) |
 [mr_in](../locales/mr_in.js) |
 [ms](../locales/ms.js) |
-[ms_latn](../locales/ms_latn.js) |
-[ms_latn_bn](../locales/ms_latn_bn.js) |
-[ms_latn_my](../locales/ms_latn_my.js) |
-[ms_latn_sg](../locales/ms_latn_sg.js) |
+[ms_bn](../locales/ms_bn.js) |
+[ms_my](../locales/ms_my.js) |
+[ms_sg](../locales/ms_sg.js) |
 [mt](../locales/mt.js) |
 [mt_mt](../locales/mt_mt.js) |
 [my](../locales/my.js) |
@@ -473,13 +484,18 @@ Locale |
 [pa_guru_in](../locales/pa_guru_in.js) |
 [pl](../locales/pl.js) |
 [pl_pl](../locales/pl_pl.js) |
+[prg](../locales/prg.js) |
+[prg_001](../locales/prg_001.js) |
 [ps](../locales/ps.js) |
 [ps_af](../locales/ps_af.js) |
 [pt](../locales/pt.js) |
 [pt_ao](../locales/pt_ao.js) |
 [pt_br](../locales/pt_br.js) |
+[pt_ch](../locales/pt_ch.js) |
 [pt_cv](../locales/pt_cv.js) |
+[pt_gq](../locales/pt_gq.js) |
 [pt_gw](../locales/pt_gw.js) |
+[pt_lu](../locales/pt_lu.js) |
 [pt_mo](../locales/pt_mo.js) |
 [pt_mz](../locales/pt_mz.js) |
 [pt_pt](../locales/pt_pt.js) |
@@ -575,17 +591,17 @@ Locale |
 [ti](../locales/ti.js) |
 [ti_er](../locales/ti_er.js) |
 [ti_et](../locales/ti_et.js) |
+[tk](../locales/tk.js) |
+[tk_tm](../locales/tk_tm.js) |
 [to](../locales/to.js) |
 [to_to](../locales/to_to.js) |
 [tr](../locales/tr.js) |
 [tr_cy](../locales/tr_cy.js) |
 [tr_tr](../locales/tr_tr.js) |
 [tzm](../locales/tzm.js) |
-[tzm_latn](../locales/tzm_latn.js) |
-[tzm_latn_ma](../locales/tzm_latn_ma.js) |
+[tzm_ma](../locales/tzm_ma.js) |
 [ug](../locales/ug.js) |
-[ug_arab](../locales/ug_arab.js) |
-[ug_arab_cn](../locales/ug_arab_cn.js) |
+[ug_cn](../locales/ug_cn.js) |
 [uk](../locales/uk.js) |
 [uk_ua](../locales/uk_ua.js) |
 [ur](../locales/ur.js) |
@@ -598,8 +614,12 @@ Locale |
 [uz_cyrl_uz](../locales/uz_cyrl_uz.js) |
 [uz_latn](../locales/uz_latn.js) |
 [uz_latn_uz](../locales/uz_latn_uz.js) |
+[vai_latn](../locales/vai_latn.js) |
+[vai_latn_lr](../locales/vai_latn_lr.js) |
 [vi](../locales/vi.js) |
 [vi_vn](../locales/vi_vn.js) |
+[vo](../locales/vo.js) |
+[vo_001](../locales/vo_001.js) |
 [vun](../locales/vun.js) |
 [vun_tz](../locales/vun_tz.js) |
 [wae](../locales/wae.js) |
