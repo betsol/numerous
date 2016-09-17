@@ -121,7 +121,7 @@ Run:
 - `make locales` to build fresh list of locales
 - `make test` to test the library
 - `gulp start` to run local webserver for demos page
-- `gulp deploy-site` to deploy GitHub Pages
+- `gulp demo:deploy` to deploy GitHub Pages
 
 
 ## Feedback
