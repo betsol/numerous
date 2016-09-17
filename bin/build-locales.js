@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var cldr = require('cldr');
 var fs = require('fs');
+var cldr = require('cldr');
 var beautify = require('node-beautify').beautifyJs;
 var async = require('async');
 
