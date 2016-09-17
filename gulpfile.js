@@ -23,7 +23,7 @@ gulp.task('start', function (callback) {
 gulp.task('webserver', function () {
   serverFactory
     .create({
-      path: './demos',
+      path: './demo',
       serveStaticConfig: {
         index: 'index.html'
       }

@@ -1,6 +1,6 @@
 {
   "name": "numerous",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tiny pluralization library in JavaScript that supports almost any language",
   "main": "./lib/numerous.js",
   "ignore": [

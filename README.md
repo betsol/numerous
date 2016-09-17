@@ -25,6 +25,9 @@ Please see [the demo][site].
 2. ???
 3. Pluralize!
 
+For more details, please, read the article:
+[«How to pluralize any word in different languages using JavaScript?»][article].
+
 
 ### With Node
 
@@ -181,3 +184,4 @@ THE SOFTWARE.
   [repo-gh]: https://github.com/betsol/numerous
   [repo-npm]: https://www.npmjs.com/package/numerous
   [site]: http://betsol.github.io/numerous/
+  [article]: https://gist.github.com/slavafomin/f2e5259cab17d55af5d9fa4c2c2baa08
