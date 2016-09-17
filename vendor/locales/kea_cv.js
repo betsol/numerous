@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('kea_cv', function pluralize_kea_cv(n) {
+    numerous.addLocale('kea_cv', function pluralize_kea_cv(n /**/ ) {
         return "other"
     });
 }).call(this);
