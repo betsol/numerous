@@ -3,6 +3,12 @@
 This file documents all the **significant** changes over the history of this library.
 
 
+## Version 1.0.0
+(September 17, 2016)
+
+- Stabilized API
+
+
 ## Version 0.2.0
 (September 17, 2016)
 

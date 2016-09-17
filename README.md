@@ -59,7 +59,7 @@ You could use npm instead of bower above.
 
 ## Examples
 
-### Direct example
+### Static Example
 
 ```js
 
@@ -77,7 +77,7 @@ numerous.pluralize('en', 2, {
 
 ```
 
-### Example with instantiation
+### Instance Example
 
 ```js
 
