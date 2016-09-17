@@ -15,14 +15,15 @@ gulp.task('start', function (callback) {
 });
 
 gulp.task('webserver', function () {
-
-  serverFactory.create({
-    path: './demos',
-    serveStaticConfig: {
-      index: 'index.html'
-    }
-  }).start();
-
+  serverFactory
+    .create({
+      path: './demos',
+      serveStaticConfig: {
+        index: 'index.html'
+      }
+    })
+    .start()
+  ;
 });
 
 gulp.task('deploy-site', function () {
@@ -30,5 +31,6 @@ gulp.task('deploy-site', function () {
     .pipe(debug({
       title: 'Deploy'
     }))
-    .pipe(deploy({}));
+    .pipe(deploy({}))
+  ;
 });

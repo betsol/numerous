@@ -3,6 +3,14 @@
 This file documents all the **significant** changes over the history of this library.
 
 
+## Version 0.2.0
+(September 17, 2016)
+
+- Updated locales
+- Updated README
+- Updated demos
+
+
 ## Version 0.1.0
 (April 06, 2015)
 

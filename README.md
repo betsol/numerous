@@ -28,12 +28,12 @@ Please see [the demo][site].
 
 ### With Node
 
-1). Install module via npm: `npm install --save numerous`.
+1). Install module via npm: `npm i -S numerous`.
 
 2). Require it:
 
-```javascript
-var numerous = require('../lib/numerous.js');
+```js
+const numerous = require('numerous');
 ```
 
 
@@ -54,12 +54,14 @@ var numerous = require('../lib/numerous.js');
 <script src="/bower_components/numerous/locales/ru.js"></script>
 ```
 
+You could use npm instead of bower above.
+
 
 ## Examples
 
 ### Direct example
 
-```javascript
+```js
 
 // Returns "apple".
 numerous.pluralize('en', 1, {
@@ -68,7 +70,7 @@ numerous.pluralize('en', 1, {
 });
 
 // Returns "cats".
-pluralize('en', 2, {
+numerous.pluralize('en', 2, {
   one: 'cat',
   other: 'cats'
 });
@@ -77,7 +79,7 @@ pluralize('en', 2, {
 
 ### Example with instantiation
 
-```javascript
+```js
 
 // Creating instances for specific locales.
 var englishPluralizer = numerous.create('en');
@@ -148,7 +150,7 @@ Thank you!
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Slava Fomin II, BETTER SOLUTIONS
+Copyright (c) 2015-2016 Slava Fomin II, BETTER SOLUTIONS
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
