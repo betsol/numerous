@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('prg', function pluralize_prg(n /**/ ) {
+    numerous.addLocale('prg', function pluralize_prg(n /*``*/ ) {
         var v = n.toString().replace(/^[^.]*\.?/, "").length,
             f = parseInt(n.toString().replace(/^[^.]*\.?/, ""), 10) || 0;
         if (typeof n === "string") n = parseInt(n, 10);

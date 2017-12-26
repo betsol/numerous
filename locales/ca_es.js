@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('ca_es', function pluralize_ca_es(n /**/ ) {
+    numerous.addLocale('ca_es', function pluralize_ca_es(n /*``*/ ) {
         var i = Math.floor(Math.abs(n)),
             v = n.toString().replace(/^[^.]*\.?/, "").length;
         if (typeof n === "string") n = parseInt(n, 10);

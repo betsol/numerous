@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('zh_hans_sg', function pluralize_zh_hans_sg(n /**/ ) {
+    numerous.addLocale('zh_hans_sg', function pluralize_zh_hans_sg(n /*``*/ ) {
         return "other"
     });
 }).call(this);

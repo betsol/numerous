@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('lag', function pluralize_lag(n /**/ ) {
+    numerous.addLocale('lag', function pluralize_lag(n /*``*/ ) {
         var i = Math.floor(Math.abs(n));
         if (typeof n === "string") n = parseInt(n, 10);
         if (n === 0) return "zero";

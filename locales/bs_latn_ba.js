@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('bs_latn_ba', function pluralize_bs_latn_ba(n /**/ ) {
+    numerous.addLocale('bs_latn_ba', function pluralize_bs_latn_ba(n /*``*/ ) {
         var i = Math.floor(Math.abs(n)),
             v = n.toString().replace(/^[^.]*\.?/, "").length,
             f = parseInt(n.toString().replace(/^[^.]*\.?/, ""), 10) || 0;

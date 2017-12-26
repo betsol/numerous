@@ -1,6 +1,6 @@
 {
   "name": "numerous",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tiny pluralization library in JavaScript that supports almost any language",
   "keywords": [
     "i18n",

@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('km', function pluralize_km(n /**/ ) {
+    numerous.addLocale('km', function pluralize_km(n /*``*/ ) {
         return "other"
     });
 }).call(this);

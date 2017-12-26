@@ -6,7 +6,7 @@
     } else {
         numerous = root.numerous;
     }
-    numerous.addLocale('pt_gq', function pluralize_pt_gq(n /**/ ) {
+    numerous.addLocale('pt_gq', function pluralize_pt_gq(n /*``*/ ) {
         if (typeof n === "string") n = parseInt(n, 10);
         if (n === Math.floor(n) && n >= 0 && n <= 2 && !(n === 2)) return "one";
         return "other"
