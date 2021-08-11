@@ -2,7 +2,6 @@
 const { resolve: resolvePath } = require('path');
 
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 const deploy = require('gulp-gh-pages');
 const del = require('del');
 const { ncp } = require('ncp');
@@ -17,16 +16,27 @@ gulp.task('default', function (callback) {
   callback();
 });
 
-gulp.task('demo:deploy', done => {
-  runSequence(
-    'demo:deploy:before',
-    'demo:deploy:actual',
-    'demo:deploy:after',
-    done
-  );
-});
+module.exports = {
+  'demo:deploy': gulp.series(
+    demoBeforeDeploy,
+    demoDeploy,
+    deployClearTemp,
+  ),
+};
 
-gulp.task('demo:deploy:before', done => {
+
+/**
+ * Clears temp directory.
+ */
+function deployClearTemp () {
+  return del([
+    tempDeployPath,
+    publishPath,
+  ]);
+}
+
+
+function demoBeforeDeploy(done) {
 
   // Cleaning temp directories and making a temp copy
   deployClearTemp().then(
@@ -51,26 +61,14 @@ gulp.task('demo:deploy:before', done => {
     });
   }
 
-});
+}
 
-gulp.task('demo:deploy:actual', function () {
+function demoDeploy() {
+
   console.log('Starting to deploy files...');
+
   return gulp.src(tempDeployPath + '/**/*')
     .pipe(deploy())
   ;
-});
 
-gulp.task('demo:deploy:after', function () {
-  return deployClearTemp();
-});
-
-
-/**
- * Clears temp directory.
- */
-function deployClearTemp () {
-  return del([
-    tempDeployPath,
-    publishPath,
-  ]);
 }
