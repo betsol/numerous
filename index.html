@@ -1,72 +1,66 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Numerous — Demo</title>
+  <meta charset="utf-8" />
+  <title>Numerous — Demo</title>
+  <link href="//unpkg.com/bootstrap@3.4.1/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="./src/index.css" rel="stylesheet" />
 </head>
-
 <body>
+  <h1>Numerous — Demo</h1>
+  <p>Tiny pluralization library in JavaScript that supports almost any language.</p>
+  <p>
+    <a href="https://github.com/betsol/numerous">See it on GitHub &rightarrow;</a>
+  </p>
+  <hr>
 
-    <h1>Numerous — Demo</h1>
-    <p>Tiny pluralization library in JavaScript that supports almost any language.</p>
-    <p>
-        <a href="https://github.com/betsol/numerous">See it on GitHub &rightarrow;</a>
-    </p>
-    <hr>
+  <form id="form">
+    <div class="form-group">
+      <label for="apples-count">Number of apples</label>
+      <input id="apples-count" class="form-control" type="number" value="1">
+    </div>
+    <div class="form-group">
+      <label for="oranges-count">Number of oranges</label>
+      <input id="oranges-count" class="form-control" type="number" value="7">
+    </div>
+    <div class="form-group">
+      <label for="locale">Locale</label>
+      <select id="locale" class="form-control">
+        <option value="en">English</option>
+        <option value="de">German</option>
+        <option value="ru">Russian</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-default">Pluralize!</button>
+  </form>
 
-    <form id="form">
-        <div class="form-group">
-            <label for="apples-count">Number of apples</label>
-            <input id="apples-count" class="form-control" type="number" value="1">
-        </div>
-        <div class="form-group">
-            <label for="oranges-count">Number of oranges</label>
-            <input id="oranges-count" class="form-control" type="number" value="7">
-        </div>
-        <div class="form-group">
-            <label for="locale">Locale</label>
-            <select id="locale" class="form-control">
-                <option value="en">English</option>
-                <option value="ru">Russian</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-default">Pluralize!</button>
-    </form>
+  <hr>
 
-    <hr>
+  <p class="text-bigger">
+    <span id="text-i-have"></span>
+    <strong id="apples-result" class="text-success"></strong>
+    <span id="text-and"></span>
+    <strong id="oranges-result" class="text-success"></strong>!
+  </p>
 
-    <p class="text-bigger">
-        <span id="text-i-have"></span>
-        <strong id="apples-result" class="text-success"></strong>
-        <span id="text-and"></span>
-        <strong id="oranges-result" class="text-success"></strong>!
-    </p>
+  <hr>
 
-    <hr>
+  <p>
+    <a href="./src/index.js" target="_blank">
+      See the code behind this page!
+    </a>
+  </p>
 
-    <p>
-        <a href="script.js" target="_blank">
-            See the code behind this page!
-        </a>
-    </p>
+  <hr>
 
-    <hr>
+  <p>
+    For more details, please, read the article:
+    <a href="https://gist.github.com/slavafomin/f2e5259cab17d55af5d9fa4c2c2baa08" target="_blank">
+      How to pluralize any word in different languages using JavaScript?
+    </a>
+  </p>
 
-    <p>
-        For more details, please, read the article:
-        <a href="https://gist.github.com/slavafomin/f2e5259cab17d55af5d9fa4c2c2baa08" target="_blank">
-            «How to pluralize any word in different languages using JavaScript?»<!--
-     --></a>.
-    </p>
-
-    <!-- Scripts -->
-    <script src="vendor/numerous/numerous.js"></script>
-    <script src="vendor/locales/en.js"></script>
-    <script src="vendor/locales/ru.js"></script>
-    <script src="script.js"></script>
+  <script src="./dist/main.js"></script>
 
 </body>
-
 </html>
