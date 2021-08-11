@@ -1,6 +1,21 @@
+
 # Numerous Changelog
 
 This file documents all the **significant** changes over the history of this library.
+
+
+## Version 2.0.0
+(August 11, 2021)
+
+- done some major refactoring
+- changed locale file format
+- updated CLDR to the latest version and re-generated all the locales
+- updated library API to better support modern front-end development practices
+- added TypeScript support
+- updated README
+- updated dependencies
+- updated package manifest file
+- removed bower support
 
 
 ## Version 1.0.0
