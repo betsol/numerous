@@ -1,7 +1,9 @@
-*.log
-Thumbs.db
-.DS_Store?
 /.idea/
-/node_modules/
-/bower_components/
 /.publish
+/node_modules/
+
+/**/dist/
+
+*.log
+.DS_Store?
+Thumbs.db

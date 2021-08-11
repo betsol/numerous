@@ -15,8 +15,6 @@ export type VariantKey = (
 
 export type Variants = {
   [Key in VariantKey]?: string;
-} & {
-  other: string;
 };
 
 export interface NumerousInstance {

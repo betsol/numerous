@@ -143,17 +143,17 @@ Please see the [complete changelog][changelog] for list of changes.
 - [Slava Fomin II](https://github.com/slavafomin) (author)
 
 
-## Developer guide
+## Developer Guide
 
 Fork, clone, create a feature branch, add tests, commit, create a PR.
 
 Run:
 
 - `npm install` to initialize the project
-- `npm run-script build-locales` to build fresh locales
+- `npm run build-locales` to build fresh locales
 - `npm test` to test the library
-- `npm start` to run local webserver for demo page
-- `npm run-script demo-deploy` to deploy GitHub Pages
+- `npm run demo:run` to run local webserver with demo page
+- `npm run demo:deploy` to deploy GitHub Pages
 
 
 ## Feedback
