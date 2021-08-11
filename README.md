@@ -24,7 +24,7 @@ For more details, please, read the article:<br>
 
 ## Demo
 
-Please see [the demo][site].
+Please see [the demo][demo].
 
 
 ## Install
@@ -212,5 +212,5 @@ THE SOFTWARE.
   [lib-cldr]: https://github.com/papandreou/node-cldr
   [repo-gh]: https://github.com/betsol/numerous
   [repo-npm]: https://www.npmjs.com/package/numerous
-  [site]: http://betsol.github.io/numerous/
+  [demo]: http://betsol.github.io/numerous/
   [article]: https://gist.github.com/slavafomin/f2e5259cab17d55af5d9fa4c2c2baa08

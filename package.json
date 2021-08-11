@@ -7,6 +7,7 @@
     "demo:build": "webpack --config ./demo/webpack.config.js",
     "demo:deploy": "npm run demo:build && gulp demo:deploy",
     "demo:run": "npm run demo:build && http-server ./demo",
+    "prepublishOnly": "npm run build-locales && npm test",
     "test": "mocha"
   },
   "license": "MIT",
@@ -24,9 +25,9 @@
   "files": [
     "lib/",
     "locales/",
+    "types/",
     "README.md",
     "changelog.md",
-    "index.d.ts",
     "index.js"
   ],
   "keywords": [
