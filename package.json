@@ -1,6 +1,6 @@
 {
   "name": "numerous",
-  "version": "2.0.0-beta",
+  "version": "2.0.0",
   "description": "Tiny pluralization library in JavaScript that supports almost any language",
   "scripts": {
     "build-locales": "./bin/build-locales.js",
