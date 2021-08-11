@@ -1,17 +1,14 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('mk_mk', function pluralize_mk_mk(n /*``*/ ) {
-        var i = Math.floor(Math.abs(n)),
-            v = n.toString().replace(/^[^.]*\.?/, "").length,
-            f = parseInt(n.toString().replace(/^[^.]*\.?/, ""), 10) || 0;
-        if (typeof n === "string") n = parseInt(n, 10);
-        if (v === 0 && i % 10 === 1 || f % 10 === 1) return "one";
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'mk_mk',
+  handler: function pluralize_mk_mk(val) {
+    const n = Number(val),
+      i = Math.floor(Math.abs(val)),
+      v = val.toString().replace(/^[^.]*\.?/, '').length,
+      f = parseInt(val.toString().replace(/^[^.]*\.?/, ''), 10) || 0;
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (v === 0 && (i % 10 === 1 && !(i % 100 === 11)) || f % 10 === 1 && !(f % 100 === 11))
+      return 'one';
+    return 'other';
+  }
+};

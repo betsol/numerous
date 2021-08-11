@@ -1,14 +1,11 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('so_dj', function pluralize_so_dj(n /*``*/ ) {
-        if (typeof n === "string") n = parseInt(n, 10);
-        if (n === 1) return "one";
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'so_dj',
+  handler: function pluralize_so_dj(val) {
+    const n = Number(val);
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (n === 1)
+      return 'one';
+    return 'other';
+  }
+};

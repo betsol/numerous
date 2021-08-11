@@ -1,18 +1,17 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('he_il', function pluralize_he_il(n /*``*/ ) {
-        var i = Math.floor(Math.abs(n)),
-            v = n.toString().replace(/^[^.]*\.?/, "").length;
-        if (typeof n === "string") n = parseInt(n, 10);
-        if (i === 1 && v === 0) return "one";
-        if (i === 2 && v === 0) return "two";
-        if (v === 0 && !(n >= 0 && n <= 10) && n % 10 === 0) return "many";
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'he_il',
+  handler: function pluralize_he_il(val) {
+    const n = Number(val),
+      i = Math.floor(Math.abs(val)),
+      v = val.toString().replace(/^[^.]*\.?/, '').length;
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (i === 1 && v === 0)
+      return 'one';
+    if (i === 2 && v === 0)
+      return 'two';
+    if (v === 0 && (!(n >= 0 && n <= 10) && n % 10 === 0))
+      return 'many';
+    return 'other';
+  }
+};

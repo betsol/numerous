@@ -1,44 +1,58 @@
 {
   "name": "numerous",
-  "version": "1.0.3",
+  "version": "2.0.0-beta",
   "description": "Tiny pluralization library in JavaScript that supports almost any language",
-  "keywords": [
-    "i18n",
-    "internationalization",
-    "translation",
-    "locales",
-    "plural",
-    "pluralization"
-  ],
-  "author": "Slava Fomin II <s.fomin@betsol.ru>",
-  "repository": "betsol/numerous",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "async": "^2.0.1",
-    "cldr": "~3",
-    "del": "^2.2.2",
-    "expect.js": "^0.3.1",
-    "gulp": "^3.8.11",
-    "gulp-debug": "^2.0.1",
-    "gulp-gh-pages": "^0.5.4",
-    "mocha": "^3.0.2",
-    "ncp": "^2.0.0",
-    "node-beautify": "0.0.5",
-    "run-sequence": "^1.0.2",
-    "spa-server": "^1.0.0"
+  "scripts": {
+    "start": "gulp start",
+    "test": "mocha",
+    "demo-deploy": "gulp demo:deploy",
+    "build-locales": "./bin/build-locales.js"
   },
+  "license": "MIT",
+  "author": "Slava Fomin II <slava@fomin.io>",
+  "repository": "https://github.com/betsol/numerous",
+  "homepage": "https://github.com/betsol/numerous",
+  "bugs": {
+    "url": "https://github.com/betsol/numerous/issues"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "main": "index.js",
+  "types": "types/index.d.ts",
   "files": [
     "lib/",
     "locales/",
+    "README.md",
     "changelog.md",
-    "index.js",
-    "README.md"
+    "index.d.ts",
+    "index.js"
   ],
-  "scripts": {
-    "start": "gulp start",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec",
-    "demo-deploy": "gulp demo:deploy",
-    "build-locales": "./bin/build-locales.js"
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "l10n",
+    "locales",
+    "localization",
+    "plural",
+    "pluralization",
+    "translation"
+  ],
+  "dependencies": {
+    "is-node": "^1.0.2"
+  },
+  "devDependencies": {
+    "cldr": "^7.1.0",
+    "del": "^6.0.0",
+    "expect.js": "^0.3.1",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-gh-pages": "^0.5.4",
+    "js-beautify": "^1.14.0",
+    "mocha": "^9.0.3",
+    "ncp": "^2.0.0",
+    "p-limit": "^3.1.0",
+    "run-sequence": "^1.2.2",
+    "spa-server": "^1.0.0"
   }
 }

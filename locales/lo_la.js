@@ -1,12 +1,9 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('lo_la', function pluralize_lo_la(n /*``*/ ) {
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'lo_la',
+  handler: function pluralize_lo_la(val) {
+    const n = Number(val);
+    if (isNaN(n))
+      throw Error('n is not a number');
+    return 'other';
+  }
+};

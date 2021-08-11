@@ -1,15 +1,13 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('se_se', function pluralize_se_se(n /*``*/ ) {
-        if (typeof n === "string") n = parseInt(n, 10);
-        if (n === 1) return "one";
-        if (n === 2) return "two";
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'se_se',
+  handler: function pluralize_se_se(val) {
+    const n = Number(val);
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (n === 1)
+      return 'one';
+    if (n === 2)
+      return 'two';
+    return 'other';
+  }
+};

@@ -1,7 +1,11 @@
-var numerous = require('../lib/numerous.js');
-var pluralize = function pluralize_xh_za(n) {
-    if (typeof n === "string") n = parseInt(n, 10);
-    if (n === 1) return "one";
-    return "other"
+module.exports = {
+  id: 'xh_za',
+  handler: function pluralize_xh_za(val) {
+    const n = Number(val);
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (n === 1)
+      return 'one';
+    return 'other';
+  }
 };
-numerous.addLocale('xh_za', pluralize);

@@ -1,17 +1,25 @@
+
 # Numerous
 
 [![npm version](https://badge.fury.io/js/numerous.svg)][repo-npm]
-![Bower](https://img.shields.io/bower/v/numerous.svg)
 [![Build Status](https://travis-ci.org/betsol/numerous.svg)](https://travis-ci.org/betsol/numerous)
 
 
 Tiny pluralization library in JavaScript that supports almost any language.
 
+For more details, please, read the article:<br>
+[How to pluralize any word in different languages using JavaScript?][article]
+
 
 ## Features
 
-- supports ~639 locales by means of [CLDR][lib-cldr] (built-in). See the [complete list][locales].
-- could be run in node or browser environment
+- a completely stand-alone solution (no APIs or polyfills required)
+- supports **789** locales by means of [CLDR][lib-cldr] (built-in).
+  See the [complete list][locales]
+- could be run in Node.js or browser
+- very lightweight *(just ~300 Bytes compressed)*
+- almost no dependencies
+- TypeScript support out of the box
 
 
 ## Demo
@@ -19,89 +27,110 @@ Tiny pluralization library in JavaScript that supports almost any language.
 Please see [the demo][site].
 
 
+## Install
+
+```shell
+npm install --save numerous
+```
+
+
 ## Usage
 
-1. Require library
-2. ???
-3. Pluralize!
+### Node.js
 
-For more details, please, read the article:
-[«How to pluralize any word in different languages using JavaScript?»][article].
-
-
-### With Node
-
-1). Install module via npm: `npm i -S numerous`.
-
-2). Require it:
+In Node.js environment the library automatically loads
+the required locales on first use.
 
 ```js
 const numerous = require('numerous');
+
+// Create an instance of Numerous using preferred locale
+const { pluralize } = numerous.create('en');
+
+// Specify the list of variants
+const variants = {
+  one: 'apple',
+  other: 'apples',
+};
+
+// Pluralize!
+
+// I have 1 apple
+const applesCount = 1;
+console.log(`I have ${applesCount} ${pluralize(applesCount, variants)}`);
+
+// She had 5 apples
+const applesCount = 5;
+console.log(`She had ${applesCount} ${pluralize(applesCount, variants)}`);
 ```
 
 
-### In browser
+### Browser
 
-1). Install package via Bower: `bower install --save betsol/numerous`.
+In browser environment you need to load all the locales that you are
+planning to use before initializing the instance of Numerous.
+This is done in order to provide optimal bundle size.
 
-2). Add library to your page: 
+```js
+import * as numerous from 'numerous';
 
-```html
-<script src="/bower_components/numerous/lib/numerous.js"></script>
+import enLocale from 'numerous/locales/en';
+import ruLocale from 'numerous/locales/ru';
+
+// Register single locale
+numerous.registerLocale(enLocale);
+
+// Or register multiple locales at the same time
+numerous.registerLocale([
+  enLocale,
+  ruLocale,
+]);
+
+// Create an instance of Numerous
+// using previously registered locale
+const { pluralize } = numerous.create('en');
+
+// Specify the list of variants
+const variants = {
+  one: 'apple',
+  other: 'apples',
+};
+
+// Pluralize!
+
+// I have 1 apple
+const applesCount = 1;
+console.log(`I have ${applesCount} ${pluralize(applesCount, variants)}`);
+
+// She had 5 apples
+const applesCount = 5;
+console.log(`She had ${applesCount} ${pluralize(applesCount, variants)}`);
 ```
 
-3). Add required locales to your page:
 
-```html
-<script src="/bower_components/numerous/locales/en.js"></script>
-<script src="/bower_components/numerous/locales/ru.js"></script>
-```
+### Without instantiating
 
-You could use npm instead of bower above.
-
-
-## Examples
-
-### Static Example
+You can use the library without instantiating it first.
+You just need to specify the locale on each call.
 
 ```js
 
-// Returns "apple".
+// "apple"
 numerous.pluralize('en', 1, {
   one: 'apple',
   other: 'apples'
 });
 
-// Returns "cats".
+// "cats"
 numerous.pluralize('en', 2, {
   one: 'cat',
   other: 'cats'
 });
-
 ```
 
-### Instance Example
+## Examples
 
-```js
-
-// Creating instances for specific locales.
-var englishPluralizer = numerous.create('en');
-var russianPluralizer = numerous.create('ru');
-
-// Returns "apple".
-englishPluralizer.pluralize(1, {
-  one: 'apple',
-  other: 'apples'
-});
-
-// Returns "яблока".
-russianPluralizer.pluralize(2, {
-  one: 'яблоко',
-  few: 'яблока',
-  many: 'яблок'
-});
-
-```
+Please see [test files](./test) for more use cases.
 
 
 ## Changelog
@@ -111,7 +140,7 @@ Please see the [complete changelog][changelog] for list of changes.
 
 ## Contributors
 
-This library was made possible by [it's contributors][contributors].
+- [Slava Fomin II](https://github.com/slavafomin) (author)
 
 
 ## Developer guide
@@ -120,10 +149,10 @@ Fork, clone, create a feature branch, add tests, commit, create a PR.
 
 Run:
 
-- `npm install && bower install` to initialize the project
-- `npm run-script build-locales` to build fresh list of locales
+- `npm install` to initialize the project
+- `npm run-script build-locales` to build fresh locales
 - `npm test` to test the library
-- `npm start` to run local webserver for demos page
+- `npm start` to run local webserver for demo page
 - `npm run-script demo-deploy` to deploy GitHub Pages
 
 
@@ -153,7 +182,7 @@ Thank you!
 
 The MIT License (MIT)
 
-Copyright (c) 2015-2016 Slava Fomin II, BETTER SOLUTIONS
+ⓒ 2015—2021 Slava Fomin II
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -174,10 +203,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-  [changelog]: changelog.md
+  [changelog]: CHANGELOG.md
   [contributors]: https://github.com/betsol/numerous/graphs/contributors
   [so-ask]: http://stackoverflow.com/questions/ask?tags=node.js
-  [email]: mailto:s.fomin@betsol.ru
+  [email]: mailto:slava@fomin.io
   [new-issue]: https://github.com/betsol/numerous/issues/new
   [locales]: docs/locales.md
   [lib-cldr]: https://github.com/papandreou/node-cldr

@@ -1,16 +1,13 @@
-(function () {
-    var root = this;
-    var numerous;
-    if ('function' === typeof require) {
-        numerous = require('../lib/numerous.js');
-    } else {
-        numerous = root.numerous;
-    }
-    numerous.addLocale('da_dk', function pluralize_da_dk(n /*``*/ ) {
-        var i = Math.floor(Math.abs(n)),
-            t = parseInt(n.toString().replace(/^[^.]*\.?|0+$/g, ""), 10) || 0;
-        if (typeof n === "string") n = parseInt(n, 10);
-        if (n === 1 || !(t === 0) && (i === 0 || i === 1)) return "one";
-        return "other"
-    });
-}).call(this);
+module.exports = {
+  id: 'da_dk',
+  handler: function pluralize_da_dk(val) {
+    const n = Number(val),
+      i = Math.floor(Math.abs(val)),
+      t = parseInt(val.toString().replace(/^[^.]*\.?|0+$/g, ''), 10) || 0;
+    if (isNaN(n))
+      throw Error('n is not a number');
+    if (n === 1 || !(t === 0) && (i === 0 || i === 1))
+      return 'one';
+    return 'other';
+  }
+};

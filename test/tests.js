@@ -1,18 +1,19 @@
-var expect = require('expect.js');
 
-var numerous = require('../lib/numerous.js');
+const expect = require('expect.js');
+
+const numerous = require('../lib/numerous.js');
 
 
 describe('Numerous', function () {
 
   context('with Russian locale', function () {
 
-    it('pluralizes correctly', function (done) {
-      var pluralize = numerous.create('ru').pluralize;
-      var variants = {
+    it('pluralizes correctly', () => {
+      const { pluralize } = numerous.create('ru');
+      const variants = {
         one: 'яблоко',
         few: 'яблока',
-        many: 'яблок'
+        many: 'яблок',
       };
       expect(pluralize(1, variants)).to.be('яблоко');
       expect(pluralize(2, variants)).to.be('яблока');
@@ -29,18 +30,17 @@ describe('Numerous', function () {
       expect(pluralize(22, variants)).to.be('яблока');
       expect(pluralize(25, variants)).to.be('яблок');
       expect(pluralize(1000000, variants)).to.be('яблок');
-      done();
     });
 
   });
 
-  context('with English locale', function () {
+  context('with English locale', () => {
 
-    it('pluralizes correctly', function (done) {
-      var pluralize = numerous.create('en').pluralize;
-      var variants = {
+    it('pluralizes correctly', () => {
+      const { pluralize } = numerous.create('en');
+      const variants = {
         one: 'apple',
-        other: 'apples'
+        other: 'apples',
       };
       expect(pluralize(1, variants)).to.be('apple');
       expect(pluralize(2, variants)).to.be('apples');
@@ -53,19 +53,17 @@ describe('Numerous', function () {
       expect(pluralize(9, variants)).to.be('apples');
       expect(pluralize(10, variants)).to.be('apples');
       expect(pluralize(1000000, variants)).to.be('apples');
-      done();
     });
 
   });
 
-  context('without instantiation', function () {
+  context('without instantiation', () => {
 
-    it('pluralizes correctly', function (done) {
-      var result = numerous.pluralize('en', 1, {
-        one: 'apple'
+    it('pluralizes correctly', () => {
+      const result = numerous.pluralize('en', 1, {
+        one: 'apple',
       });
       expect(result).to.be('apple');
-      done();
     });
 
   });

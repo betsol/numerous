@@ -1,108 +1,96 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var cldr = require('cldr');
-var beautify = require('node-beautify').beautifyJs;
-var async = require('async');
+const { writeFile } = require('fs');
+const { promisify } = require('util');
+const { resolve: resolvePath } = require('path');
 
-var tasks = [];
-var supportedLocales = [];
+const $writeFile = promisify(writeFile);
 
-for (var key in cldr.localeIds) {
-  if (!cldr.localeIds.hasOwnProperty(key)) {
-    continue;
-  }
-  var locale = cldr.localeIds[key];
+const cldr = require('cldr');
+const del = require('del');
+const pLimit = require('p-limit');
+const { js: beautifyJs } = require('js-beautify');
 
-  var pluralFunction = cldr.extractPluralRuleFunction(locale);
-  if ('undefined' === typeof pluralFunction(1)) {
-    console.log('Missing plural function for locale: ' + locale + ', skipping');
-    continue;
-  }
 
-  // Adding task to a list.
-  (function (locale, pluralFunction) {
-    tasks.push(function (callback) {
-      writePluralFunctionToFileForLocale(locale, pluralFunction, callback);
-    });
-  })(locale, pluralFunction);
+const concurrency = 16;
+const destinationPath = resolvePath(`${__dirname}/../locales`);
 
-  supportedLocales.push(locale);
 
-}
+(async function buildLocales() {
 
-// Running all tasks in parallel.
-async.parallel(tasks, function (error, results) {
-  if (error) {
-    console.log(error);
-  } else {
-    buildListOfSupportedLocales(function (error) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Locales built successfully');
-      }
-    });
-  }
-});
+  // Deleting content of the destination directory,
+  // but not the directory itself
+  await del([
+    `${destinationPath}/**`,
+    `!${destinationPath}/`
+  ]);
+
+  const limit = pLimit(concurrency);
+
+  const tasks = cldr.localeIds.map(localeId => limit(async () => {
+
+    const pluralFunction = cldr.extractPluralRuleFunction(localeId);
+
+    await writePluralFunctionToFileForLocale(localeId, pluralFunction);
+
+  }));
+
+  // Processing all the tasks concurrently
+  await Promise.all(tasks);
+
+  console.log(`${cldr.localeIds.length} locale(s) built successfully`);
+
+  await buildListOfSupportedLocales(cldr.localeIds);
+
+})();
 
 
 //===========//
 // FUNCTIONS //
 //===========//
 
-function writePluralFunctionToFileForLocale (locale, pluralFunction, callback) {
+async function writePluralFunctionToFileForLocale(localeId, pluralFunction) {
 
-  // Building the source.
-  var source =
-    "(function () {" +
-    "  var root = this;" +
-    "  var numerous;" +
-    "  if ('function' === typeof require) {" +
-    "    numerous = require('../lib/numerous.js');" +
-    "  } else {" +
-    "    numerous = root.numerous;" +
-    "  }" +
-    "  numerous.addLocale('" + locale + "', " + pluralFunction.toString() + ");" +
-    "}).call(this);"
-  ;
+  let source = (
+    `module.exports = { ` +
+    `  id: '${localeId}', ` +
+    `  handler: ${pluralFunction.toString()}` +
+    `};`
+  );
 
-  // Replacing function name for convenience.
-  source = source.replace('anonymous', 'pluralize_' + locale);
+  // Replacing function name for convenience
+  source = source.replace('anonymous', 'pluralize_' + localeId);
 
-  // Beautifying the source.
-  source = beautify(source);
-
-  // Writing source to a file.
-  var path = './locales/' + locale + '.js';
-  fs.writeFile(path, source, function (error) {
-    if (error) {
-      callback(error);
-    }
-    console.log('Plural function written to file for locale: ' + locale);
-    callback();
+  source = beautifyJs(source, {
+    indent_size: 2,
+    end_with_newline: true,
+    preserve_newlines: true,
   });
+
+  // Writing source to a file
+  await $writeFile(
+    `${destinationPath}/${localeId}.js`,
+    source
+  );
+
+  console.log('Plural function written to file for locale: ' + localeId);
 
 }
 
-function buildListOfSupportedLocales (callback) {
+async function buildListOfSupportedLocales(supportedLocaleIds) {
+  
+  const lines = [
+    `# List of locales supported by Numerous\n`,
+    `Right now **` + supportedLocaleIds.length + `** locales are supported.\n`,
+    `Locale |`,
+    `--- |`,
+    ...supportedLocaleIds.map(
+      localeId => `[${localeId}](../locales/${localeId}.js) |`
+    ),
+  ];
 
-  var source =
-    '# List of locales supported by Numerous' + "\n\n" +
-    'Right now **' + supportedLocales.length + '** locales are supported.' + "\n\n" +
-    'Locale |' + "\n" +
-    '--- |' + "\n"
-  ;
+  await $writeFile('./docs/locales.md', lines.join("\n"));
 
-  supportedLocales.forEach(function (locale) {
-    source += '[' + locale + '](../locales/' + locale + '.js)' + ' |' + "\n";
-  });
+  console.log('List of locales created');
 
-  fs.writeFile('./docs/locales.md', source, function (error) {
-    if (error) {
-      callback(error);
-    }
-    console.log('List of locales created');
-    callback();
-  });
 }
